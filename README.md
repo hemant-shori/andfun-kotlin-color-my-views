@@ -1,6 +1,7 @@
-# Layouts - ColorMyViews app
+# Layouts - ColorMyViews app using Compose UI
 
 This is the second toy app for lesson 2 of the [Android App Development in Kotlin course on Udacity](https://www.udacity.com/course/developing-android-apps-with-kotlin--ud9012).
+This app is re-written using ComposeUi
 
 ## ColorMyViews
 
