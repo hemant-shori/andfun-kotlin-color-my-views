@@ -5,16 +5,16 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.IntrinsicSize
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.width
+import androidx.compose.material3.Button
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
@@ -32,6 +32,7 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.android.colormyviews.ui.theme.ColorMyViews
+import androidx.compose.foundation.layout.IntrinsicSize
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -89,7 +90,6 @@ fun RootView(modifier: Modifier = Modifier) {
             modifier = modifier
                 .fillMaxWidth()
                 .padding(20.dp)
-                .width(IntrinsicSize.Max)
                 .background(mutableColorList[0])
                 .clickable(
                     onClick = {
@@ -200,6 +200,69 @@ fun RootView(modifier: Modifier = Modifier) {
                                     mutableColorList[index] = listOfColor[index]
                                 }
                             )
+                    )
+                }
+            }
+        }
+
+        Row(
+            horizontalArrangement = Arrangement.SpaceBetween,
+            verticalAlignment = Alignment.CenterVertically, modifier = Modifier.fillMaxWidth()
+
+        ) {
+            Text(
+                text = "How to play",
+                modifier = modifier
+                    .padding(16.dp)
+            )
+            Text(
+                text = "Tap the screen and buttons",
+                modifier = modifier
+                    .padding(16.dp)
+            )
+        }
+
+        Box {
+            Row(
+                horizontalArrangement = Arrangement.SpaceBetween,
+                verticalAlignment = Alignment.Bottom, modifier = Modifier
+                    .fillMaxHeight()
+                    .fillMaxWidth()
+            ) {
+                Button(
+                    onClick = {
+                        mutableColorList[2] = Color.Red
+                    },
+                    modifier = modifier
+                        .padding(16.dp)
+                        .weight(1f)
+                ) {
+                    Text(
+                        text = "Red"
+                    )
+                }
+                Button(
+                    onClick = {
+                        mutableColorList[3] = Color.Yellow
+                    },
+                    modifier = modifier
+                        .padding(16.dp)
+                        .weight(1f)
+                ) {
+                    Text(
+                        text = "Yellow"
+                    )
+                }
+                Button(
+                    onClick = {
+                        mutableColorList[4] = Color.Green
+                    },
+                    modifier = modifier
+                        .padding(16.dp)
+                        .weight(1f)
+                ) {
+                    Text(
+                        text = "Green"
                     )
                 }
             }
